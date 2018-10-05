@@ -1,0 +1,128 @@
+<!-- 个人信息 -->
+<view class="user-info">
+
+  <view class="info-shell">
+
+    <!-- 头像 -->
+    <view class="info-row" style="height:120rpx" bindtap="uploadAvator">
+      <view class="text" style="line-height:120rpx">头像</view>
+      <view class="info-arrow">
+        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
+        </image>
+      </view>
+      <view class="avator">
+        <image src="{{photoUrl}}" mode="aspectFill">
+        </image>
+      </view>
+    </view>
+
+    <!-- 姓名 -->
+    <view class="info-row" bindtap="modifyInfo" data-key="name">
+      <view class="text">姓名</view>
+      <view class="info-arrow">
+        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
+        </image>
+      </view>
+      <view class="item item-name">{{userInfo.name||""}}</view>
+    </view>
+
+    <!-- 空闲时间 -->
+    <view class="info-row" bindtap="modifyInfo" data-key='freeTime'>
+      <view class="text">空闲时间</view>
+      <view class="info-arrow">
+        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
+        </image>
+      </view>
+      <view class="item item-name">{{userInfo.freeTime||""}}</view>
+    </view>
+
+    <!-- 学校 -->
+    <view class="info-row" bindtap="modifyInfo" data-key='school'>
+      <view class="text">学校</view>
+      <view class="info-arrow">
+        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
+        </image>
+      </view>
+      <view class="item item-name">{{userInfo.school||""}}</view>
+    </view>
+
+    <!-- 地址 -->
+    <view class="info-row" bindtap="modifyInfo" data-key="add">
+      <view class="text">地址</view>
+      <view class="info-arrow">
+        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
+        </image>
+      </view>
+      <view class="item item-name">{{userInfo.add||""}}</view>
+    </view>
+
+    <!-- 学历 -->
+    <view class="info-row" bindtap="modifyInfo" data-key="education">
+      <view class="text">学历</view>
+      <view class="info-arrow">
+        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
+        </image>
+      </view>
+      <view class="item item-name">{{userInfo.education||""}}</view>
+    </view>
+
+    <!-- 收费 -->
+    <view class="info-row" bindtap="modifyInfo" data-key='fee'>
+      <view class="text">收费</view>
+      <view class="info-arrow">
+        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
+        </image>
+      </view>
+      <view class="item item-name">{{userInfo.fee||""}}</view>
+    </view>
+
+    <!-- 擅长学科 -->
+    <view class="info-row" bindtap="modifyInfo" data-key='subject'>
+      <view class="text">擅长学科</view>
+      <view class="info-arrow">
+        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
+        </image>
+      </view>
+      <view class="item item-name">{{userInfo.subject||""}}</view>
+    </view>
+
+    <!-- 教授学科 -->
+    <view class="info-row" bindtap="modifyInfo" data-key="grade">
+      <view class="text">教授学历</view>
+      <view class="info-arrow">
+        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
+        </image>
+      </view>
+      <view class="item item-name">{{userInfo.grade||""}}</view>
+    </view>
+
+  </view>
+
+  <!-- 通用弹窗 -->
+  <Modal show="{{showModal}}" height="auto">
+    <view class='modal-content'>
+      <view class='pwd_title'>请输入</view>
+      <input bindinput="input" value="{{inputValue}}" class='pwd_shell' focus="{{true}}">
+      </input>
+      <view class='exitIf'>
+        <view bindtap='canclePwd'>取消</view>
+        <view bindtap='surePwd'>确定</view>
+      </view>
+    </view>
+  </Modal>
+
+  <!-- 退出登录 -->
+  <view class="exit" bindtap="exit">退出登录</view>
+
+  <!-- 退出登录弹窗 -->
+  <view class='cover2' wx:if="{{showExit}}">
+    <view class='exitShell'>
+      <view class='exitAsk'>您确定要退出登录？</view>
+      <view class='exitIf'>
+        <view bindtap='cancleExit'>取消</view>
+        <view bindtap='sureExit'>确定</view>
+      </view>
+    </view>
+  </view>
+
+</view>

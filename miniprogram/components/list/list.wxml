@@ -1,0 +1,60 @@
+<!--miniprogram/components/list/list.wxml-->
+
+<view class='goods_shell'>
+
+  <block wx:for="{{list}}" wx:key="{{index}}">
+
+    <view class='item clear' bindtap='tabGo'>
+
+      <view class='item_l'>
+        <image class='profile' src="{{item.profile}}"></image>
+      </view>
+
+      <view class='item_r'>
+
+        <view class='clear top'>
+          <view class='fl name'>
+            {{item.name}}
+          </view>
+          <view class='fl subject'>
+            {{item.subject}}
+          </view>
+          <view class='fl fee'>
+            {{item.fee}}
+          </view>
+        </view>
+
+        <view class='middle clear'>
+          <view class='fl free_time'>
+            {{item.freeTime}}
+          </view>
+        </view>
+
+        <view class='botom clear'>
+          <view class='fl school'>
+            {{item.school}}
+          </view>
+          <view class='fl add'>
+            {{item.add}}
+          </view>
+          <view class='fl education'>
+            {{item.education}}
+          </view>
+          <view class='fl publish_date'>
+            {{item.publishDate}}
+          </view>
+        </view>
+
+
+
+        <!-- <view class='go' data-currentfood="{{item}}">
+					GO
+				</view> -->
+
+      </view>
+
+    </view>
+
+  </block>
+
+</view>
