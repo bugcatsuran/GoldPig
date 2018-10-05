@@ -3,6 +3,9 @@
 .fl{
 	float: left;
 }
+.fr{
+	float: right;
+}
 .clear{
 	overflow:hidden;
 	_zoom:1;
@@ -12,9 +15,9 @@
 }
 
 .item{
-	padding: 30rpx 0;
 	border-bottom: 0.5rpx solid #e6e6e6;
-	margin: 0 30rpx;
+	padding: 30rpx;
+	background: #fff;
 }
 .item:last-child{
 	border-bottom: 0;
@@ -34,20 +37,43 @@
 	float: left; 
 	width: calc(100% - 150rpx);
 	max-width: calc(100% - 150rpx);
-	padding-left: 30rpx;
+	padding: 10rpx 0 10rpx 30rpx;
 	height: 200rpx;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
 	position: relative;
+	color: gray;
 }
 
 .top{
-
+	height: 50rpx;
+	line-height: 50rpx;
 }
-
 .name{
-
+	font-size:38rpx;
+	font-weight: bolder;
+	color: #333;
+}
+.grade{
+	margin-left: 20rpx;
+}
+.subject{
+	margin-left: 10rpx;
+}
+.school,.add,.education{
+	font-size: 30rpx;
+	height: 30rpx;
+	line-height: 30rpx; 
+	padding-right: 10rpx;
+	border-right: 1rpx solid grey;
+}
+.add{
+	padding-left: 10rpx;
+}
+.education{
+	padding-left: 10rpx;
+	border-right: none;
 }
 
 .goods_title{
@@ -57,7 +83,6 @@
 	font-size: 32rpx;
 	border-bottom:1rpx solid #e6e6e6;
 }
-
 
 .plus{
 	height: 56rpx;

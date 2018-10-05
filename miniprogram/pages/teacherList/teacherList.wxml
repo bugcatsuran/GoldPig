@@ -1,7 +1,0 @@
-<view >
-	<List
-		goods_shell="goods_shell"
-		list="{{teacherList}}"
-		bind:tabGo="toDetail"
-	/>
-</view>

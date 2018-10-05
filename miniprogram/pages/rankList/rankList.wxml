@@ -1,0 +1,11 @@
+<Tab 
+	list="{{classifyList}}" 
+	active="{{classifyList[0].value}}"
+	bind:changeTab="changeTab"
+/>
+
+<List
+	goods_shell="goods_shell"
+	list="{{rankList}}"
+	bind:tabGo="toDetail"
+/>

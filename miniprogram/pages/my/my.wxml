@@ -8,7 +8,7 @@
 				mode="aspectFill">
 			</image>
 
-			<button class="go-login-shell nick" 	wx:if="{{userInfo.nickName}}">
+			<button class="go-login-shell nick"	wx:if="{{authUserInfo}}">
 				{{userInfo.nickName}}
 			</button>
 
@@ -34,7 +34,7 @@
 		<view>我的身份（{{roleDefine[role]}}）</view>
 	</view>
 
-	<view class='role' bindtap='goDetail' wx:if="{{role == 1}}">
+	<view class='role' bindtap='goResume' wx:if="{{role == 1}}">
 		<view>我的简历</view>
 	</view>
 
@@ -65,9 +65,23 @@
 		</view>
 	</Modal>
 
+	<!-- 退出登录 -->
+  <!-- <view class="exit" bindtap="exit" wx:if="{{authUserInfo}}">退出登录</view> -->
+
+  <!-- 退出登录弹窗 -->
+  <!-- <view class='cover2' wx:if="{{showExit}}">
+    <view class='exitShell'>
+      <view class='exitAsk'>您确定要退出登录？</view>
+      <view class='exitIf'>
+        <view bindtap='cancleExit'>取消</view>
+        <view bindtap='sureExit'>确定</view>
+      </view>
+    </view>
+  </view> -->
+
 </view>
 
-
+	
 
 <!-- <view class="container">
 

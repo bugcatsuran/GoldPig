@@ -1,3 +1,7 @@
+.user-info{
+	padding-bottom: 50rpx;
+}
+
 .block-change-name{
 	height: 100%;
 	position: absolute;
@@ -221,17 +225,7 @@
 	margin-bottom: 30rpx;
 	padding: 0 30rpx;
 }
-.exit{
-	height:100rpx;
-	background:#fff;
-	text-align:center;
-	font-size:34rpx;
-	line-height:100rpx;
-	color: #ff3244;
-	border-bottom: 0.5rpx solid #e9ebf5;
-	border-top: 0.5rpx solid #e9ebf5;
-	margin-top: 30rpx;
-}
+
 .item-name{
 	overflow-x: scroll;
 	max-height: 100%;
@@ -291,4 +285,27 @@
 	border-radius: 6rpx;
 	padding-left: 20rpx;
 	background: #fff;
+}
+
+.success{
+	height:100rpx;
+	background:#fff;
+	text-align:center;
+	font-size:34rpx;
+	line-height:100rpx;
+	color: #67C23A;
+	border-bottom: 0.5rpx solid #67C23A;
+	border-top: 0.5rpx solid #67C23A;
+	margin-top: 30rpx;
+}
+.warn{
+	height:100rpx;
+	background:#fff;
+	text-align:center;
+	font-size:34rpx;
+	line-height:100rpx;
+	color: #F56C6C;
+	border-bottom: 0.5rpx solid #F56C6C;
+	border-top: 0.5rpx solid #F56C6C;
+	margin-top: 30rpx;
 }

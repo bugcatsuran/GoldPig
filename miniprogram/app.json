@@ -1,36 +1,43 @@
 {
   "pages": [
+		"pages/rankList/rankList",
 		"pages/index/index",
-		"pages/teacherList/teacherList",
 		"pages/rank/rank",
-		"pages/myDetail/myDetail",
+		"pages/resume/resume",
+		"pages/demand/demand",
 		"pages/my/my"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#00b38a",
     "navigationBarTitleText": "近朱",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
 	"tabBar": {
-		"color": "grey",
-		"selectedColor": "#409EFF",
-		"borderStyle": "white",
+		"color": "#333",
+		"selectedColor": "#00b38a",
+		"borderStyle": "#f6f6f6",
 		"backgroundColor": "#fff",
 		"list": [
 			{
-				"pagePath": "pages/teacherList/teacherList",
-				"text": "筛选"
+				"pagePath": "pages/rankList/rankList",
+				"text": "排行榜"
 			},
 			{
 				"pagePath": "pages/rank/rank",
-				"text": "排行榜"
+				"text": "消息"
 			},
 			{
 				"pagePath": "pages/my/my",
 				"text": "我的"
 			}
 		]
+	},
+	"networkTimeout": {
+		"request": 60000,
+		"connectSocket": 60000,
+		"uploadFile": 120000,
+		"downloadFile": 120000
 	}
 }

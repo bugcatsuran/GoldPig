@@ -16,17 +16,20 @@
           <view class='fl name'>
             {{item.name}}
           </view>
+					<view class='fl grade'>
+						{{item.grade}}
+					</view>
           <view class='fl subject'>
             {{item.subject}}
           </view>
-          <view class='fl fee'>
+          <view class='fr fee'>
             {{item.fee}}
           </view>
         </view>
 
         <view class='middle clear'>
           <view class='fl free_time'>
-            {{item.freeTime}}
+            空闲时间：{{item.freeTime}}
           </view>
         </view>
 

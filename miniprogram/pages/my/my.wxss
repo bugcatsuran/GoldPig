@@ -211,3 +211,45 @@ page {
 	justify-content: space-around;
 	align-items: center;
 }
+
+/* 退出登录 */
+.exit{
+	height:100rpx;
+	background:#fff;
+	text-align:center;
+	font-size:34rpx;
+	line-height:100rpx;
+	color: #ff3244;
+	border-bottom: 0.5rpx solid #e9ebf5;
+	border-top: 0.5rpx solid #e9ebf5;
+	margin-top: 30rpx;
+}
+.exitShell{
+	background: #fff;
+	color: #666;
+	width: 70%;
+	height: 300rpx;
+}
+.exitAsk{
+	height: 200rpx;
+	text-align: center;
+	line-height: 200rpx;
+	border: 0.5rpx solid #ececec;
+	box-sizing: border-box;
+	font-size:34rpx;
+}
+.exitIf{
+	display: flex;
+}
+.exitIf view{
+	flex: 1;
+	text-align: center;
+	line-height: 100rpx;
+	height: 100rpx;
+	box-sizing: border-box;
+	font-size:34rpx;
+}
+.exitIf view:nth-child(2){
+	color: red;
+	border-left: 0.5rpx solid #ececec;
+}
