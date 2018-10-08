@@ -1,65 +1,166 @@
+const db = wx.cloud.database();
+const demand = db.collection('demand');
+
 Page({
 
-	/**
-	 * 页面的初始数据
-	 */
 	data: {
-		
+		demandInfo:{},
+		showModal: false,
+		currentKey: '',
+		inputValue: '',
 	},
 
-	/**
-	 * 生命周期函数--监听页面加载
-	 */
-	onLoad: function (options) {
-		
-	},
-
-	/**
-	 * 生命周期函数--监听页面初次渲染完成
-	 */
-	onReady: function () {
-		
-	},
-
-	/**
-	 * 生命周期函数--监听页面显示
-	 */
 	onShow: function () {
-		
+		const openid = wx.getStorageSync('openid');
+		console.log(openid, 'openid')
+		if (openid) {
+			this.getInfo()
+		} else {
+			this.login().then(() => {
+				self.getInfo()
+			});;
+		}
 	},
 
-	/**
-	 * 生命周期函数--监听页面隐藏
-	 */
-	onHide: function () {
-		
+	login:function(){
+		const promise = new Promise(function (resolve, reject) {
+			wx.cloud.callFunction({
+				name: 'login',
+				data: {},
+				success: res => {
+					wx.setStorageSync('openid', res.result.openid)
+					resolve(res.result.openid)
+				},
+				fail: err => {
+					console.error(err)
+				}
+			})
+		})
+		return promise
 	},
 
-	/**
-	 * 生命周期函数--监听页面卸载
-	 */
-	onUnload: function () {
-		
+	getInfo:function(){
+		const self = this;
+		wx.showLoading({
+			title: '正在加载',
+		})
+		demand.where({
+			_openid: wx.getStorageSync('openid')
+		})
+		.get({
+			success: function (res) {
+				console.log(res)
+				if(res.data[0]){
+					self.setData({
+						demandInfo: res.data[0]
+					})
+				}
+				wx.hideLoading()
+			},
+			fail:function(err){
+				wx.showModal({
+					content: err,
+				})
+				wx.hideLoading()
+			}
+		})
 	},
 
-	/**
-	 * 页面相关事件处理函数--监听用户下拉动作
-	 */
-	onPullDownRefresh: function () {
-		
+	publish: function () {
+		wx.showLoading({
+			title: '正在发布更新',
+			mask: true
+		})
+		if (!this.data.demandInfo._id) {
+			this.add();
+		} else {
+			this.update()
+		}
 	},
 
-	/**
-	 * 页面上拉触底事件的处理函数
-	 */
-	onReachBottom: function () {
-		
+	add:function(){
+		let info = JSON.parse(JSON.stringify(this.data.demandInfo));
+		demand.add({
+			data: info,
+			success: function (res) {
+				wx.showModal({
+					content: '发布成功',
+				})
+			},
+			complete: function () {
+				wx.hideLoading();
+			}
+		})
 	},
 
-	/**
-	 * 用户点击右上角分享
-	 */
-	onShareAppMessage: function () {
-		
-	}
+	update:function(){
+		let info = JSON.parse(JSON.stringify(this.data.demandInfo));
+		delete info._id;
+		delete info._openid;
+		demand.doc(this.data.demandInfo._id).update({
+			data: info,
+			success: function (res) {
+				wx.showModal({
+					content: '发布成功',
+				})
+			},
+			fail: function (err) {
+				console.log(err)
+			},
+			complete: function () {
+				wx.hideLoading();
+			}
+		})
+	},
+
+	out: function () {
+		let info = JSON.parse(JSON.stringify(this.data.demandInfo));
+		delete info._id;
+		delete info._openid;
+		info.style = 'N';
+		resume.doc(this.data.demandInfo._id).update({
+			data: info,
+			success: function (res) {
+				wx.showModal({
+					content: '下架成功',
+				})
+			},
+			fail: function (err) {
+				console.log(err)
+			}
+		})
+	},
+
+	modifyInfo: function (e) {
+		const key = e.currentTarget.dataset.key;
+		const inputValue = this.data.demandInfo[key] || '';
+		this.setData({
+			showModal: true,
+			currentKey: key,
+			inputValue
+		})
+	},
+
+	input: function (e) {
+		const value = e.detail.value;
+		this.setData({
+			inputValue: value
+		})
+	},
+
+	cancleModal: function (e) {
+		this.setData({
+			showModal: false,
+			inputValue: this.data.demandInfo[this.data.currentKey]
+		})
+	},
+
+	sureModal: function (e) {
+		let demandInfo = Object.assign({}, this.data.demandInfo)
+		demandInfo[this.data.currentKey] = this.data.inputValue;
+		this.setData({
+			showModal: false,
+			demandInfo
+		})
+	},
 })

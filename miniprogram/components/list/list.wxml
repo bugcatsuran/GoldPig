@@ -1,5 +1,4 @@
 <!--miniprogram/components/list/list.wxml-->
-
 <view class='goods_shell'>
 
   <block wx:for="{{list}}" wx:key="{{index}}">
@@ -7,7 +6,9 @@
     <view class='item clear' bindtap='tabGo'>
 
       <view class='item_l'>
-        <image class='profile' src="{{item.profile}}"></image>
+				<ListItem 
+					photoId="{{item.photoId}}"
+				/>	
       </view>
 
       <view class='item_r'>
@@ -47,8 +48,6 @@
             {{item.publishDate}}
           </view>
         </view>
-
-
 
         <!-- <view class='go' data-currentfood="{{item}}">
 					GO

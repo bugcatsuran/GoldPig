@@ -9,9 +9,10 @@ exports.main = async (event, context) => {
 	if(event.type==1){
 		res = await db.collection('resume').get()
 		list = res.data
-		console.log(list)
-	}else{
-		list = []
+	}else if(event.type==2){
+		res = await db.collection('demand').get()
+		list = res.data
 	}
+	console.log(list)
 	return list
 }

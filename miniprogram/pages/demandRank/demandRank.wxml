@@ -1,0 +1,48 @@
+<view class='top'>
+	<view>
+		以下是前100的需求榜，榜单实时更新
+	</view>
+	<view class='howto'>
+		如何上榜?
+	</view>
+</view>
+
+<block wx:for="{{rankList}}" wx:key="index">
+	<view class='rank_item'>
+		<view class='fee'>
+			{{item.fee}}
+		</view>
+		<view class='champion_icon'>
+			<image
+			 	wx:if="{{index==0}}"
+				src="{{'../../assets/icons/hot1.png'}}"
+			></image>
+			<image
+			 	wx:if="{{index==1}}"
+				src="{{'../../assets/icons/hot2.png'}}"
+			></image>
+			<image
+			 	wx:if="{{index==2}}"
+				src="{{'../../assets/icons/hot3.png'}}"
+			></image>
+		</view>
+		<view class='info'>
+			<view class='base'>
+				<view class='grade'>
+					需教授：{{item.grade}} {{item.subject}}
+				</view>
+			</view>
+			<view class='time'>
+				授课时间：{{item.freeTime}}
+			</view>
+			<view class='city'>
+				<image
+					src="{{'../../assets/icons/city.png'}}"
+				></image>
+				<view class='city_name'>
+					地点：{{item.city}} {{item.add}}
+				</view>
+			</view>
+		</view>
+	</view>
+</block>

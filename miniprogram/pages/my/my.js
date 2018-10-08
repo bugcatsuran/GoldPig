@@ -1,7 +1,8 @@
 const roleDefine = {
-	0:'未选择',
-	1:'家教',
-	2:'家长'
+	0:'请选择',
+	1:'请登录',
+	2:'家教',
+	3:'家长',
 }
 
 Page({
@@ -14,23 +15,27 @@ Page({
 	},
 
 	onLoad: function (options) {
-		const role = wx.getStorageSync('role') || 0;
-		this.setData({
-			role
-		})
 		const self = this;
 		wx.getSetting({
 			success(res){
 				console.log(res)
 				if (!res.authSetting['scope.userInfo']){
-					wx.setStorageSync('authUserInfo', false)
 					self.setData({
-						authUserInfo:false
+						authUserInfo:false,
+						role:1
 					})
 				}else{
-					self.setData({
-						userInfo: wx.getStorageSync('userInfo')
-					})
+					if (wx.getStorageSync('authUserInfo')){
+						self.setData({
+							userInfo: wx.getStorageSync('userInfo'),
+							role: wx.getStorageSync('role') || 0
+						})
+					}else{
+						self.setData({
+							authUserInfo: false,
+							role: 1
+						})
+					}
 				}
 			}
 		})
@@ -42,7 +47,8 @@ Page({
 		wx.setStorageSync('userInfo', e.detail.userInfo)
 		this.setData({
 			authUserInfo: true,
-			userInfo: e.detail.userInfo
+			userInfo: e.detail.userInfo,
+			role: wx.getStorageSync('role') || 0
 		})
 	},
 
@@ -61,18 +67,18 @@ Page({
 	},
 
 	ImTeacher: function () {
-		wx.setStorageSync('role', 1)
+		wx.setStorageSync('role', 2)
 		this.setData({
-			role: 1,
+			role: 2,
 			showModal:false
 		})
 	},
 
 	ImParent:function(){
-		wx.setStorageSync('role', 2)
+		wx.setStorageSync('role', 3)
 		this.setData({
 			showModal: false,
-			role:2
+			role:3
 		})
 	},
 
@@ -101,10 +107,11 @@ Page({
 	},
 
 	sureExit() {
+		wx.setStorageSync('authUserInfo', false)
 		this.setData({
 			showExit: false,
 			userInfo:{},
-			role:0,
+			role:1,
 			authUserInfo:false
 		})
 	},

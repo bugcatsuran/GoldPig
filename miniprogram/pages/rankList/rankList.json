@@ -1,6 +1,8 @@
 {
 	"usingComponents": {
 		"List": "../../components/list/list",
+		"Cell": "../../components/cell/cell",
+		"ListItem": "../../components/listItem/listItem",
 		"Tab": "../../components/tab/tab"
 	},
 	"enablePullDownRefresh": true

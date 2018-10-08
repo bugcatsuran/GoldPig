@@ -43,14 +43,13 @@
 
 
 .user-info{
-	height: 100%;
-	overflow: hidden;
+	padding-bottom: 80rpx;
 }
 .info-shell{
 	background: #fff;
-	margin: 30rpx 0 50rpx;
+	/* margin: 30rpx 0 50rpx; */
 	border-bottom: 0.5rpx solid #e9ebf5;
-	border-top: 0.5rpx solid #e9ebf5;
+	/* border-top: 0.5rpx solid #e9ebf5; */
 }
 .info-row{
   height: 100rpx;
@@ -294,8 +293,8 @@
 	font-size:34rpx;
 	line-height:100rpx;
 	color: #67C23A;
-	border-bottom: 0.5rpx solid #67C23A;
-	border-top: 0.5rpx solid #67C23A;
+	border-bottom: 0.5rpx solid #e9ebf5;
+	border-top: 0.5rpx solid #e9ebf5;
 	margin-top: 30rpx;
 }
 .warn{
@@ -305,7 +304,7 @@
 	font-size:34rpx;
 	line-height:100rpx;
 	color: #F56C6C;
-	border-bottom: 0.5rpx solid #F56C6C;
-	border-top: 0.5rpx solid #F56C6C;
+	border-bottom: 0.5rpx solid #e9ebf5;
+	border-top: 0.5rpx solid #e9ebf5;
 	margin-top: 30rpx;
 }

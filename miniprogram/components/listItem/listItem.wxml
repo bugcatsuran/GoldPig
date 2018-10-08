@@ -1,0 +1,5 @@
+<image  
+	class='profile' 
+	src="{{photoUrl}}" 
+	mode="aspectFill">
+</image>

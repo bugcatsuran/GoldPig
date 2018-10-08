@@ -14,6 +14,12 @@ Component({
 
 	},
 
+	pageLifetimes: {
+		show: function () {
+			console.log('com', 666)
+		},
+	},
+
 	methods: {
 		tabGo(options) {
 			const currentFood = options.currentTarget.dataset.currentfood;

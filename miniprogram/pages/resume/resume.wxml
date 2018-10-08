@@ -5,14 +5,12 @@
 
     <!-- 头像 -->
     <view class="info-row" style="height:120rpx" bindtap="uploadAvator">
-      <view class="text" style="line-height:120rpx">头像</view>
+      <view class="text" style="line-height:120rpx">个人照</view>
       <view class="info-arrow">
-        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
-        </image>
+        <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon"></image>
       </view>
       <view class="avator">
-        <image src="{{photoUrl}}" mode="aspectFill">
-        </image>
+        <image src="{{resumeInfo.photoUrl||''}}" mode="aspectFill"></image>
       </view>
     </view>
 
@@ -115,6 +113,6 @@
   <view class="success" bindtap="publish">发布更新</view>
 
 	<!-- 下架 -->
-  <!-- <view class="warn" bindtap="out">下架简历</view> -->
+  <view class="warn" bindtap="out" wx:if="{{resumeInfo._id}}">下架简历</view>
 
 </view>
