@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -40,38 +40,45 @@
 				},
 				{
 					"id": 1,
-					"name": "list",
-					"pathName": "pages/rankList/rankList",
+					"name": "myResume",
+					"pathName": "pages/myResume/myResume",
 					"query": ""
 				},
 				{
 					"id": 2,
-					"name": "resume",
-					"pathName": "pages/resume/resume",
+					"name": "message",
+					"pathName": "pages/message/message",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "mes",
-					"pathName": "pages/mes/mes",
+					"id": 3,
+					"name": "rankTeacher",
+					"pathName": "pages/rankTeacher/rankTeacher",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "trank",
-					"pathName": "pages/teacherRank/teacherRank",
+					"id": 4,
+					"name": "myDemand",
+					"pathName": "pages/myDemand/myDemand",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "demand",
-					"pathName": "pages/demand/demand",
+					"id": 5,
+					"name": "rankDemand",
+					"pathName": "pages/rankDemand/rankDemand",
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "demand",
-					"pathName": "pages/demandRank/demandRank"
+					"id": 6,
+					"name": "detailDemand",
+					"pathName": "pages/detailDemand/detailDemand",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "detailResume",
+					"pathName": "pages/detailResume/detailResume",
+					"query": ""
 				}
 			]
 		}

@@ -1,9 +1,9 @@
 <!--miniprogram/components/list/list.wxml-->
-<view class='goods_shell'>
+<view class=''>
 
   <block wx:for="{{list}}" wx:key="{{index}}">
 
-    <view class='item clear' bindtap='tabGo'>
+    <view class='item clear' bindtap='goDetail' data-current="{{item._id}}">
 
       <view class='item_l'>
 				<ListItem 
@@ -48,10 +48,6 @@
             {{item.publishDate}}
           </view>
         </view>
-
-        <!-- <view class='go' data-currentfood="{{item}}">
-					GO
-				</view> -->
 
       </view>
 

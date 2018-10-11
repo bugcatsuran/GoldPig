@@ -7,6 +7,16 @@ App({
     } else {
       wx.cloud.init({
 				traceUser:true,
+				env:{		
+					database: 'de-d55f1f',
+					storage:'de-d55f1f',
+					functions:'de-d55f1f'
+				},
+				// env: {
+				// 	database: 'produ-68bf7d',
+				// 	storage: 'produ-68bf7d',
+				// 	functions: 'produ-68bf7d'
+				// },
 			})
     }
 

@@ -1,10 +1,10 @@
 <view class='top'>
 	<view>
-		以下是前100的需求榜，榜单实时更新
+		以下每日需求，需求实时更新
 	</view>
-	<view class='howto'>
+	<!-- <view class='howto'>
 		如何上榜?
-	</view>
+	</view> -->
 </view>
 
 <block wx:for="{{rankList}}" wx:key="index">
@@ -46,3 +46,7 @@
 		</view>
 	</view>
 </block>
+
+<view class='no_more' wx:if="{{rankList.length<100}}">
+	暂无更多需求信息
+</view>

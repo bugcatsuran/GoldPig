@@ -44,6 +44,14 @@ Page({
 		return promise
 	},
 
+	toDetail: function (e) {
+		console.log(e)
+		const id = e.currentTarget.dataset.id
+		wx.navigateTo({
+			url: '../detailResume/detailResume?id=' + id,
+		})
+	},
+
 	onPullDownRefresh: function () {
 		
 	},

@@ -21,7 +21,7 @@ Component({
 
 	pageLifetimes: {
 		show: function () { 
-			console.log('com',999)
+			console.log('listItem',999)
 			if (this.data.photoId) {
 				this.getPhotoUrl()
 			}
@@ -33,7 +33,6 @@ Component({
 			let fileList = [];
 			fileList.push(this.data.photoId)
 			const self = this;
-			console.log(this.data.photoId,'photoId')
 			wx.cloud.getTempFileURL({
 				fileList,
 				success: res => {

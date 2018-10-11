@@ -84,13 +84,13 @@ Page({
 
 	goResume:function(){
 		wx.navigateTo({
-			url: '../resume/resume',
+			url: '../myResume/myResume',
 		})
 	},
 
 	goDemand:function(){
 		wx.navigateTo({
-			url: '../demand/demand',
+			url: '../myDemand/myDemand',
 		})
 	},
 

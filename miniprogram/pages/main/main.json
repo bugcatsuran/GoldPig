@@ -1,8 +1,9 @@
 {
 	"usingComponents": {
 		"List": "../../components/list/list",
-		"Cell": "../../components/cell/cell",
 		"ListItem": "../../components/listItem/listItem",
+		"Cities": "../../components/cities/cities",	
+		"Filter": "../../components/filter/filter",	
 		"Tab": "../../components/tab/tab"
 	},
 	"enablePullDownRefresh": true

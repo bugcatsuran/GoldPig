@@ -13,7 +13,6 @@
 	color: #ff1b37;
 }
 .item{
-	/* border-bottom: 0.5rpx solid #e6e6e6; */
 	padding: 20rpx 30rpx;
 	background: #fff;
 }

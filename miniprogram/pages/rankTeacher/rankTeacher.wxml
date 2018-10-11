@@ -2,13 +2,13 @@
 	<view>
 		以下是前100名的讲师，榜单实时更新
 	</view>
-	<view class='howto'>
+	<!-- <view class='howto'>
 		如何上榜?
-	</view>
+	</view> -->
 </view>
 
 <block wx:for="{{rankList}}" wx:key="index">
-	<view class='rank_item'>
+	<view class='rank_item' bindtap='toDetail' data-id="{{item._id}}">
 		<view class='champion_icon'>
 			<image
 			 	wx:if="{{index==0}}"
@@ -43,7 +43,7 @@
 					src="{{'../../assets/icons/city.png'}}"
 				></image>
 				<view class='city_name'>
-					{{item.city}}
+					{{item.city||item.add}}
 				</view>
 			</view>
 		</view>
@@ -52,3 +52,7 @@
 		</view>
 	</view>
 </block>
+
+<view class='no_more' wx:if="{{rankList.length<100}}">
+	暂无更多家教信息
+</view>

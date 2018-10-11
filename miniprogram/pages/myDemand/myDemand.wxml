@@ -62,14 +62,14 @@
     </view>
 
     <!-- 期望费用 -->
-    <view class="info-row" bindtap="modifyInfo" data-key='fee'>
+    <!-- <view class="info-row" bindtap="modifyInfo" data-key='fee'>
       <view class="text">期望费用</view>
       <view class="info-arrow">
         <image mode="widthFix" src="../../assets/icons/arrow-r.png" class="icon">
         </image>
       </view>
       <view class="item item-name">{{demandInfo.fee||""}}</view>
-    </view>
+    </view> -->
 
   </view>
 

@@ -308,3 +308,12 @@
 	border-top: 0.5rpx solid #e9ebf5;
 	margin-top: 30rpx;
 }
+.textarea{
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+	padding-top: 20rpx;
+}
+.detail{
+	padding: 20rpx 0;
+	color: #666;
+}

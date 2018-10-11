@@ -21,6 +21,7 @@
 	justify-content: space-between;
 	padding: 0 40rpx;
 	position: relative;
+	background: #fff;
 }
 .champion_icon{
 	padding-right: 50rpx;

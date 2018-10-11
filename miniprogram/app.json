@@ -1,13 +1,15 @@
 {
   "pages": [
-		"pages/rankList/rankList",
-		"pages/teacherRank/teacherRank",
-		"pages/demandRank/demandRank",			
+		"pages/main/main",
 		"pages/index/index",
-		"pages/mes/mes",
-		"pages/resume/resume",
-		"pages/demand/demand",
-		"pages/my/my"
+		"pages/message/message",
+		"pages/rankTeacher/rankTeacher",
+		"pages/rankDemand/rankDemand",			
+		"pages/my/my",
+		"pages/myResume/myResume",
+		"pages/myDemand/myDemand",
+		"pages/detailResume/detailResume",
+		"pages/detailDemand/detailDemand"
   ],
   "window": {
     "backgroundColor": "#fff",
@@ -23,13 +25,13 @@
 		"backgroundColor": "#fff",
 		"list": [
 			{
-				"pagePath": "pages/rankList/rankList",
+				"pagePath": "pages/main/main",
 				"text": "主页",
 				"iconPath": "assets/icons/home1.png",
 				"selectedIconPath": "assets/icons/home2.png"
 			},
 			{
-				"pagePath": "pages/mes/mes",
+				"pagePath": "pages/message/message",
 				"text": "消息",
 				"iconPath": "assets/icons/chat1.png",
 				"selectedIconPath": "assets/icons/chat2.png"

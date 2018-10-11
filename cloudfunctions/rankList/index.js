@@ -1,13 +1,16 @@
 const cloud = require('wx-server-sdk')
-cloud.init()
+cloud.init({
+	// env:'produ-68bf7d'
+})
 const db = cloud.database();
 
 // 云函数入口函数
 exports.main = async (event, context) => {
 	console.log(event.type)
+	console.log(event.searchData)
 	let list = [];
 	if(event.type==1){
-		res = await db.collection('resume').get()
+		res = await db.collection('resume').where(event.searchData).get()
 		list = res.data
 	}else if(event.type==2){
 		res = await db.collection('demand').get()
